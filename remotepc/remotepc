@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# RemotePC launcher for Git Bash / WSL / MSYS2 on Windows.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -W 2>/dev/null || pwd)"
+export PYTHONIOENCODING="utf-8"
+export PYTHONUTF8="1"
+
+PY_EXE="$(command -v python3 || command -v python || true)"
+if [ -z "$PY_EXE" ]; then
+    echo "[ERROR] Python 3 not found on PATH. Install Python 3.10+ first." >&2
+    exit 1
+fi
+
+# First run: generate a config with the setup wizard.
+if [ ! -f "$SCRIPT_DIR/../remotepc.config.json" ]; then
+    echo "No configuration found - starting the setup wizard..."
+    "$PY_EXE" "$SCRIPT_DIR/setup_wizard.py"
+fi
+
+exec "$PY_EXE" "$SCRIPT_DIR/remotepc.py" "$@"

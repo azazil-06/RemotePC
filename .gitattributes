@@ -1,0 +1,24 @@
+# ─── Line endings ────────────────────────────────────────────────────────────
+# Store text as LF in the repository, but ALWAYS check Windows batch files out
+# as CRLF: cmd.exe mis-parses LF-only .bat/.cmd files (e.g. "&& was unexpected").
+* text=auto
+
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# POSIX scripts must stay LF even on a Windows checkout, or the shebang breaks
+# when run from Git Bash / WSL / MSYS2.
+*.sh  text eol=lf
+/remotepc/remotepc  text eol=lf
+
+# ─── Binaries (never touched) ────────────────────────────────────────────────
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.zip   binary
+*.exe   binary
+*.dll   binary
+*.bin   binary
