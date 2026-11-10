@@ -37,6 +37,16 @@ Key highlights:
 
 ---
 
+## Demo
+
+<p align="center">
+  <a href="Demo/Screenshot%202026-11-11%20002655.png"><img src="Demo/Screenshot%202026-11-11%20002655.png" width="30%" alt="RemotePC demo screenshot 1"></a>
+  <a href="Demo/Screenshot%202026-11-11%20002757.png"><img src="Demo/Screenshot%202026-11-11%20002757.png" width="30%" alt="RemotePC demo screenshot 2"></a>
+  <a href="Demo/Screenshot%202026-11-11%20002812.png"><img src="Demo/Screenshot%202026-11-11%20002812.png" width="30%" alt="RemotePC demo screenshot 3"></a>
+</p>
+
+---
+
 ## Prerequisites
 
 ### Control PC (Windows)
@@ -424,6 +434,7 @@ RemotePC/
 ├─ remotepc.bat            # launcher (runs the wizard on first run)
 ├─ requirements.txt
 ├─ .gitignore
+├─ Demo/                   # demo screenshots
 └─ remotepc/
    ├─ remotepc.py          # the entire application
    ├─ remotepc_config.py   # config loader (defaults + JSON file)
